@@ -477,15 +477,8 @@ var compile_json = function(rows){
     }
   };
   */
-  var expand_or_not = function(){
-    if(foldr_mode=="expand"){
-      return true;
-    }else{
-      return false;
-    }
-  }
   
-  $("#toc .ui.accordion .content").filter(expand_or_not).not(".collapsed-subfoldr").addClass("active").prev(".header").addClass("active");
+  //$("#toc .ui.accordion .content").filter(expand_or_not).not(".collapsed-subfoldr").addClass("active").prev(".header").addClass("active");
   
   // change foldr icons for auto activated subfoldrs
   $("#toc .ui.accordion .header.active .icon.folder.closed").hide();
