@@ -283,7 +283,8 @@ var compile_json = function(rows){
     }
   }
   
-  var accordion_template_source = '<div class="ui accordion"><div id="{{id}}" class="title header item {{mode}}"><i class="icon folder closed"></i><i class="icon folder open hidden" data-content="{{title}}" style="display: none;"></i>{{title}}</div><div class="content ui small sortable menu {{mode}}"></div></div>';      var accordion_template = Handlebars.compile(accordion_template_source);
+  var accordion_template_source = '<div class="ui accordion"><div id="{{id}}" class="title header item {{mode}}"><i class="icon folder closed"></i><i class="icon folder open hidden" data-content="{{title}}" style="display: none;"></i>{{title}}</div><div class="content ui small sortable menu {{mode}}"></div></div>';
+  var accordion_template = Handlebars.compile(accordion_template_source);
   
   // for foldr items
   var add_accordion = function(row_index, row){
@@ -310,9 +311,9 @@ var compile_json = function(rows){
     $accordion_el.appendTo('#toc .ui.vertical.menu').accordion();
     
     // expand foldr item if "expand" is set to its option
-    if(foldr_mode){
-      $accordion_el.accordion('open',0)
-    }
+    //if(foldr_mode){
+    //  $accordion_el.accordion('open',0)
+    //}
   }
   
   // start creating #toc menu
@@ -467,6 +468,7 @@ var compile_json = function(rows){
   $("#toc a.link.item").filter(link_is_current_url_or_not).addClass("active").parent(".content").addClass("active").prev(".header").addClass("active");
   
   // auto expand #toc accordion when number < 4
+  /*
   var children_are_less_or_not = function(){
     if($(this).children().length<4){
       return true;
@@ -474,6 +476,8 @@ var compile_json = function(rows){
       return false;
     }
   };
+  */
+  
   $("#toc .ui.accordion .content").filter(children_are_less_or_not).not(".collapsed-subfoldr").addClass("active").prev(".header").addClass("active");
   
   // change foldr icons for auto activated subfoldrs
