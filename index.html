@@ -310,7 +310,7 @@ var compile_json = function(rows){
     $accordion_el.appendTo('#toc .ui.vertical.menu').accordion();
     
     // expand foldr item if "expand" is set to its option
-    if(foldr_mode == "active"){
+    if(foldr_mode){
       $accordion_el.accordion('open',0)
     }
   }
