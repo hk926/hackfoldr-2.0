@@ -477,6 +477,13 @@ var compile_json = function(rows){
     }
   };
   */
+  var expand_or_not = function(){
+    if(foldr_mode=="expand"){
+      return true;
+    }else{
+      return false;
+    }
+  }
   
   $("#toc .ui.accordion .content").filter(children_are_less_or_not).not(".collapsed-subfoldr").addClass("active").prev(".header").addClass("active");
   
