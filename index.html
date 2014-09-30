@@ -159,6 +159,7 @@ var compile_json = function(rows){
     } else if(link_url.match(/^.*.moqups.com\//)) {
       link_icon = "photo";
     } else if(link_url.match(/^.*.facebook.com\//)) {
+	  link_url = "https://www.facebook.com/plugins/likebox.php?href="+link_url+"&colorscheme=light&show_faces=false&header=false&stream=true&show_border=false&height="+$(window).height();
       link_icon = "facebook";
     } else if(link_url.match(/^.*.twitter.com\//)) {
       link_icon = "twitter";
